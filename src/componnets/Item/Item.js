@@ -3,14 +3,13 @@ import React from 'react';
 class Item extends React.Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         if (nextProps.selectedItem === this.props.name) {
-            return true
+            return true;
         }
-        // homework
-        // if (this.props.selectedItem !== this.props.name) {
-        //     return true
-        // }
+        if (this.props.selectedItem === this.props.name && nextProps.selectedItem !== this.props.name) {
+            return true;
+        }
 
-        return  false
+        return  false;
     }
 
     render() {
@@ -18,7 +17,7 @@ class Item extends React.Component {
     const { age, name, onItemClick, selectedItem } = this.props;
     return (
         <div className={selectedItem === name ? "selected" : ""} onClick={onItemClick}>
-            {age}:{name}
+            {age}:{name}{selectedItem === name ? " " + "сын собаки" : ""}
         </div>
     )
 }
