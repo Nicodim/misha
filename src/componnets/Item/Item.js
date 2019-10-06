@@ -3,10 +3,10 @@ import React from 'react';
 class Item extends React.Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         if (nextProps.selectedItem === this.props.name) {
-            return true
+            return true;
         }
         if (this.props.selectedItem === this.props.name && nextProps.selectedItem !== this.props.name) {
-            return true
+            return true;
         }
 
         return  false;
