@@ -36,7 +36,7 @@ class App extends React.Component{
   render() {
     console.log('[App][render]');
     return (
-        <div onClick={this.test} className="App">
+        <div className="App">
           <div className="list">
             {data.map((item, index) => {
               return(
@@ -47,7 +47,7 @@ class App extends React.Component{
                     age={item.age}
                     onItemClick={() => this.onItemClick(item.name)}
                 />
-              )
+              );
             })}
           </div>
         </div>
